@@ -2,7 +2,8 @@ name: Playwright CI Demo
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   playwright-tests:
@@ -25,4 +26,3 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
-``
