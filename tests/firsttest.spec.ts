@@ -1,12 +1,7 @@
 import { test, expect } from '@playwright/test';
-
-test('Google Search test', async ({ page }) => {
+test('Letcode Test', async ({ page }) => {
   await page.goto('https://letcode.in/edit');
-
-  // type into the search box
-  await page.locator('input[id="fullName"]').fill('Playwright testing');
-
-  // assert that the search box contains the text
-  await expect(page.getByRole('button', { name: 'Enter your full Name' })).toContainText('Playwright testing'); 
-
+  const input = page.locator('input#fullName');
+  await input.fill('Playwright testing');
+  await expect(input).toHaveValue('Playwright testing');
 });
